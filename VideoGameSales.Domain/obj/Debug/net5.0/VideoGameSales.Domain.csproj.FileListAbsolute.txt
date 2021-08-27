@@ -1,0 +1,12 @@
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/bin/Debug/net5.0/VideoGameSales.Domain.deps.json
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/bin/Debug/net5.0/VideoGameSales.Domain.dll
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/bin/Debug/net5.0/ref/VideoGameSales.Domain.dll
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/bin/Debug/net5.0/VideoGameSales.Domain.pdb
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/obj/Debug/net5.0/VideoGameSales.Domain.csprojAssemblyReference.cache
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/obj/Debug/net5.0/VideoGameSales.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/obj/Debug/net5.0/VideoGameSales.Domain.AssemblyInfoInputs.cache
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/obj/Debug/net5.0/VideoGameSales.Domain.AssemblyInfo.cs
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/obj/Debug/net5.0/VideoGameSales.Domain.csproj.CoreCompileInputs.cache
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/obj/Debug/net5.0/VideoGameSales.Domain.dll
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/obj/Debug/net5.0/ref/VideoGameSales.Domain.dll
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/obj/Debug/net5.0/VideoGameSales.Domain.pdb
