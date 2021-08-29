@@ -22,28 +22,28 @@ namespace VideoGameSales.Tests.Controllers
             _mapper = A.Fake<IMapper>();
         }
         [Fact]
-        private Task createPublishersShouldReturn201Created()
+        private Task createPublisherShouldReturn201Created()
         {
             var publishersController = new PublishersController(_mediator,_mapper,_urlHelper);
-            
-            var action = publishersController.createPublishersAsync(CreatePublishersCommand request);
+            var request = A.Dummy<CreatePublisherCommand>();
+            var action = publishersController.createPublishersAsync(request);
             var isCreated = action as CreatedResult;
 
             Assert.Equal(201, isCreated.StatusCode);
         }
 
         [Fact]
-        private Task getPublishersShouldReturn200Ok()
+        private Task getPublisherShouldReturn200Ok()
         {
             var publishersController = new PublishersController(_mediator,_mapper,_urlHelper);
             
-            var action = publishersController.getPublishersAsync(GetPublishersQuery request);
+            var action = publishersController.getPublishersAsync(6);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
         
         [Fact]
-        private Task deletePublishersShouldReturn200Ok()
+        private Task deletePublisherShouldReturn200Ok()
         {
             var publishersController = new PublishersController(_mediator,_mapper,_urlHelper);
             
@@ -52,11 +52,11 @@ namespace VideoGameSales.Tests.Controllers
             Assert.Equal(200, isOk.StatusCode);
         }
         
-        private Task editPublishersShouldReturn200Ok()
+        private Task editPublisherShouldReturn200Ok()
         {
             var publishersController = new PublishersController(_mediator,_mapper,_urlHelper);
-            
-            var action = publishersController.editPublishersAsync(EditPublishersCommand request);
+            var request = A.Dummy<EditPublisherCommand>();
+            var action = publishersController.editPublishersAsync(request);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }

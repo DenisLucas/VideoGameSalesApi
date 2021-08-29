@@ -26,8 +26,8 @@ namespace VideoGameSales.Tests.Controllers
         private Task createGameToPublisherShouldReturn201Created()
         {
             var gameController = new GameToPublisherController(_mediator,_mapper,_urlHelper);
-            
-            var action = gameController.createGameToPublisherAsync(CreateGameToPublisherCommand request);
+            var request = A.Dummy<CreateGameToPublisherCommand>();
+            var action = gameController.createGameToPublisherAsync(request);
             var isCreated = action as CreatedResult;
 
             Assert.Equal(201, isCreated.StatusCode);
@@ -38,7 +38,7 @@ namespace VideoGameSales.Tests.Controllers
         {
             var gameController = new GameToPublisherController(_mediator,_mapper,_urlHelper);
             
-            var action = gameController.getGameToPublisherAsync(GetGameToPublisherQuery request);
+            var action = gameController.getGameToPublisherAsync(3);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
@@ -46,8 +46,8 @@ namespace VideoGameSales.Tests.Controllers
         private Task editGameToPublisherShouldReturn200Ok()
         {
             var gameController = new GameToPublisherController(_mediator,_mapper,_urlHelper);
-            
-            var action = gameController.editGameToPublisherAsync(EditGameToPublisherCommand request);
+            var request = A.Dummy<EditGameToPublisherCommand>();
+            var action = gameController.editGameToPublisherAsync(request);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }

@@ -26,8 +26,8 @@ namespace VideoGameSales.Tests.Controllers
         private Task createGameToPlatformShouldReturn201Created()
         {
             var gameController = new GameToPlatformController(_mediator,_mapper,_urlHelper);
-            
-            var action = gameController.createGameToPlatformAsync(CreateGameToPlatformCommand request);
+            var request = A.Dummy<CreateGameToPlataformCommand>();
+            var action = gameController.createGameToPlatformAsync(request);
             var isCreated = action as CreatedResult;
 
             Assert.Equal(201, isCreated.StatusCode);
@@ -38,7 +38,7 @@ namespace VideoGameSales.Tests.Controllers
         {
             var gameController = new GameToPlatformController(_mediator,_mapper,_urlHelper);
             
-            var action = gameController.getGameToPlatformAsync(GetGameToPlatformQuery request);
+            var action = gameController.getGameToPlatformAsync(2);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
@@ -46,8 +46,8 @@ namespace VideoGameSales.Tests.Controllers
         private Task editGameToPlatformShouldReturn200Ok()
         {
             var gameController = new GameToPlatformController(_mediator,_mapper,_urlHelper);
-            
-            var action = gameController.editGameToPlatformAsync(EditGameToPlatformCommand request);
+            var request = A.Dummy<EditGameToPlatformCommand>();
+            var action = gameController.editGameToPlatformAsync(request);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }

@@ -24,11 +24,11 @@ namespace VideoGameSales.Tests
         }
         
         [Fact]
-        private Task createGameSaleShouldReturn201Created()
+        private async Task createGameShouldReturn201Created()
         {
             var gameController = new GameController(_mediator,_mapper,_urlHelper);
-            
-            var action = gameController.createGameAsync(CreateGameCommand request);
+            var request =  A.Dummy<CreateGameCommand>();
+            var action = await gameController.createGameAsync(request);
             var isCreated = action as CreatedResult;
 
             Assert.Equal(201, isCreated.StatusCode);
@@ -38,27 +38,16 @@ namespace VideoGameSales.Tests
         private Task getGameShouldReturn200Ok()
         {
             var gameController = new GameController(_mediator,_mapper,_urlHelper);
-            
-            var action = gameController.getGameAsync(GetGameQuery request);
+            var action = gameController.getGameAsync(0);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
         [Fact]
-        private Task editGameSaleShouldReturn200Ok()
+        private Task editGameShouldReturn200Ok()
         {
             var gameController = new GameController(_mediator,_mapper,_urlHelper);
-            
-            var action = gameController.editGameAsync(EditGameCommand request);
-            var isOk = action as OkObjectResult;
-            Assert.Equal(200, isOk.StatusCode);
-        }
-        
-        [Fact]
-        private Task deleteGameSaleShouldReturn200Ok()
-        {
-            var gameController = new GameController(_mediator,_mapper,_urlHelper);
-            
-            var action = gameController.deleteGameAsync(int request);
+            var request = A.Dummy<EditGameCommand>();
+            var action = gameController.editGameAsync(request);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }

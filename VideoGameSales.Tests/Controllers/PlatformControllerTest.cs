@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using AutoMapper;
+using FakeItEasy;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using VideoGameSales.Util.Helpers;
@@ -24,8 +25,8 @@ namespace VideoGameSales.Tests
         private Task createPlatformShouldReturn201Created()
         {
             var gameController = new PlatformController(_mediator,_mapper,_urlHelper);
-            
-            var action = gameController.createPlatformAsync(CreatePlatformCommand request);
+            var request = A.Dummy<CreatePlatformCommand>();
+            var action = gameController.createPlatformAsync(request);
             var isCreated = action as CreatedResult;
 
             Assert.Equal(201, isCreated.StatusCode);
@@ -36,7 +37,7 @@ namespace VideoGameSales.Tests
         {
             var platformController = new PlatformController(_mediator,_mapper,_urlHelper);
             
-            var action = platformController.getPlatformAsync(GetPlatformQuery request);
+            var action = platformController.getPlatformAsync(4);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
@@ -44,8 +45,8 @@ namespace VideoGameSales.Tests
         private Task editPlatformShouldReturn200Ok()
         {
             var platformController = new PlatformController(_mediator,_mapper,_urlHelper);
-            
-            var action = platformController.editGameSalesAsync(EditPlatformCommand request);
+            var request = A.Dummy<EditPlatformCommand>();
+            var action = platformController.editGameSalesAsync(request);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
@@ -55,7 +56,7 @@ namespace VideoGameSales.Tests
         {
             var platformController = new PlatformController(_mediator,_mapper,_urlHelper);
             
-            var action = platformController.deletePlatformAsync(int request);
+            var action = platformController.deletePlatformAsync(5);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }

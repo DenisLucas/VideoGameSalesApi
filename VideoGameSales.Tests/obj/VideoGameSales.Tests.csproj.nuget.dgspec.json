@@ -407,6 +407,9 @@
             "projectReferences": {
               "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj": {
                 "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj"
+              },
+              "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Infrastructure/VideoGameSales.Infrastructure.csproj": {
+                "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Infrastructure/VideoGameSales.Infrastructure.csproj"
               }
             }
           }

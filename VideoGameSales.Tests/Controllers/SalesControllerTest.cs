@@ -25,8 +25,8 @@ namespace VideoGameSales.Tests
         private Task createSalesShouldReturn201Created()
         {
             var salesController = new SalesController(_mediator,_mapper,_urlHelper);
-            
-            var action = salesController.createSalesAsync(CreateSalesCommand request);
+            var request = A.Dummy<CreateSalesCommand>();
+            var action = salesController.createSalesAsync(request);
             var isCreated = action as CreatedResult;
 
             Assert.Equal(201, isCreated.StatusCode);
@@ -37,7 +37,7 @@ namespace VideoGameSales.Tests
         {
             var salesController = new SalesController(_mediator,_mapper,_urlHelper);
             
-            var action = salesController.getSalesAsync(GetSalesQuery request);
+            var action = salesController.getSalesAsync(6);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
@@ -56,8 +56,8 @@ namespace VideoGameSales.Tests
         private Task editSalesShouldReturn200()
         {
             var SalesController = new SalesController(_mediator,_mapper,_urlHelper);
-            
-            var action = SalesController.editSalesAsync(EditSalesCommand request);
+            var request = A.Dummy<EditSalesCommand>();
+            var action = SalesController.editSalesAsync(request);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }

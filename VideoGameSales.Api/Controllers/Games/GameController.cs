@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +21,11 @@ namespace VideoGameSales.Api.Controllers.Games
             _mapper = mapper;
             _urlHelper = urlHelpers;
         }
-
+        [HttpPost]
+        public async Task<IActionResult> createGameAsync([FromBody] CreateGameCommand request)
+        {
+            
+        }
         
     }
 }
