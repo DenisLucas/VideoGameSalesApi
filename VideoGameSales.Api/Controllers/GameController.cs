@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using VideoGameSales.Core.Games;
 using VideoGameSales.Util.Helpers;
 
 namespace VideoGameSales.Api.Controllers.Games
@@ -24,7 +25,14 @@ namespace VideoGameSales.Api.Controllers.Games
         [HttpPost]
         public async Task<IActionResult> createGameAsync([FromBody] CreateGameCommand request)
         {
-            
+            var game = await _mediator.Send(request);
+            if (game != null)
+            { 
+                var uri = _urlHelper.GetUri(game.Id.ToString());
+                return Created(uri, game);
+            }
+            return BadRequest();
+                
         }
         
     }

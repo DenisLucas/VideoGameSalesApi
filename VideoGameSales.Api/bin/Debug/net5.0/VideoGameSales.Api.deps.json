@@ -1503,7 +1503,8 @@
       "VideoGameSales.Util/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.WebUtilities": "2.2.0",
-          "VideoGameSales.Core": "1.0.0"
+          "VideoGameSales.Core": "1.0.0",
+          "VideoGameSales.Infrastructure": "1.0.0"
         },
         "runtime": {
           "VideoGameSales.Util.dll": {}

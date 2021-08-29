@@ -5,6 +5,7 @@ using FakeItEasy;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using VideoGameSales.Api.Controllers.Games;
+using VideoGameSales.Core.Games;
 using VideoGameSales.Util.Helpers;
 using Xunit;
 

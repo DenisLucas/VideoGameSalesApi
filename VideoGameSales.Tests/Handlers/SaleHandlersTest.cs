@@ -94,5 +94,6 @@ namespace VideoGameSales.Tests.Handlers
             var action = await _mediator.Send(_sale);
             Assert.Equal(9, Data.Count);
             Assert.Equal(new SaleViewModel(),handler);
+        }
     }
 }

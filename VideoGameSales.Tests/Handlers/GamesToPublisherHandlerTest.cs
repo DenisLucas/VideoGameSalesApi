@@ -86,6 +86,6 @@ namespace VideoGameSales.Tests.Handlers
             var action = await _mediator.Send(_platform);
             Assert.Equal(9, Data.Count);
             Assert.Equal(new GamesToPublisherViewModel(),handler);
-
+        }
     }
 }
