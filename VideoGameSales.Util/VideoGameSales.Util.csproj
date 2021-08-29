@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VideoGameSales.Core\VideoGameSales.Core.csproj" />
+    <ProjectReference Include="..\VideoGameSales.Infrastructure\VideoGameSales.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

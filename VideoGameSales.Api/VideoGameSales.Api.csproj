@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\VideoGameSales.Infrastructure\VideoGameSales.Infrastructure.csproj" />
     <ProjectReference Include="..\VideoGameSales.Core\VideoGameSales.Core.csproj" />
+    <ProjectReference Include="..\VideoGameSales.Util\VideoGameSales.Util.csproj" />
   </ItemGroup>
 
 </Project>

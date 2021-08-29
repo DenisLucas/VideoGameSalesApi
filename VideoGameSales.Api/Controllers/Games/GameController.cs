@@ -1,10 +1,26 @@
 using System;
+using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using VideoGameSales.Util.Helpers;
 
 namespace VideoGameSales.Api.Controllers.Games
 {
     [ApiController]
-    public class GameController
+    [Route("api/[controller]")]
+    public class GameController : ControllerBase
     {
+        private readonly IMediator _mediator;
+        private readonly UrlHelpers _urlHelper;
+        private readonly IMapper _mapper;
+
+        public GameController(IMediator mediator, IMapper mapper, UrlHelpers urlHelpers)
+        {
+            _mediator = mediator;
+            _mapper = mapper;
+            _urlHelper = urlHelpers;
+        }
+
+        
     }
 }

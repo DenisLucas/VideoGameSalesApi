@@ -4,14 +4,183 @@
     "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/VideoGameSales.Tests.csproj": {}
   },
   "projects": {
-    "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/VideoGameSales.Tests.csproj": {
+    "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Api/VideoGameSales.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/VideoGameSales.Tests.csproj",
-        "projectName": "VideoGameSales.Tests",
-        "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/VideoGameSales.Tests.csproj",
+        "projectUniqueName": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Api/VideoGameSales.Api.csproj",
+        "projectName": "VideoGameSales.Api",
+        "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Api/VideoGameSales.Api.csproj",
         "packagesPath": "/home/denis/.nuget/packages/",
-        "outputPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/obj/",
+        "outputPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/denis/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj": {
+                "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj"
+              },
+              "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Infrastructure/VideoGameSales.Infrastructure.csproj": {
+                "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Infrastructure/VideoGameSales.Infrastructure.csproj"
+              },
+              "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Util/VideoGameSales.Util.csproj": {
+                "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Util/VideoGameSales.Util.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj",
+        "projectName": "VideoGameSales.Core",
+        "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj",
+        "packagesPath": "/home/denis/.nuget/packages/",
+        "outputPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/denis/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/VideoGameSales.Domain.csproj": {
+                "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/VideoGameSales.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/VideoGameSales.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/VideoGameSales.Domain.csproj",
+        "projectName": "VideoGameSales.Domain",
+        "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/VideoGameSales.Domain.csproj",
+        "packagesPath": "/home/denis/.nuget/packages/",
+        "outputPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/denis/.nuget/NuGet/NuGet.Config"
@@ -37,7 +206,143 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Infrastructure/VideoGameSales.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Infrastructure/VideoGameSales.Infrastructure.csproj",
+        "projectName": "VideoGameSales.Infrastructure",
+        "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Infrastructure/VideoGameSales.Infrastructure.csproj",
+        "packagesPath": "/home/denis/.nuget/packages/",
+        "outputPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/denis/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/VideoGameSales.Domain.csproj": {
+                "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/VideoGameSales.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/VideoGameSales.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/VideoGameSales.Tests.csproj",
+        "projectName": "VideoGameSales.Tests",
+        "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/VideoGameSales.Tests.csproj",
+        "packagesPath": "/home/denis/.nuget/packages/",
+        "outputPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/denis/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Api/VideoGameSales.Api.csproj": {
+                "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Api/VideoGameSales.Api.csproj"
+              },
+              "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj": {
+                "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj"
+              },
+              "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Util/VideoGameSales.Util.csproj": {
+                "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Util/VideoGameSales.Util.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "FakeItEasy": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.7.1, )"
@@ -57,6 +362,68 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Util/VideoGameSales.Util.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Util/VideoGameSales.Util.csproj",
+        "projectName": "VideoGameSales.Util",
+        "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Util/VideoGameSales.Util.csproj",
+        "packagesPath": "/home/denis/.nuget/packages/",
+        "outputPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Util/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/denis/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj": {
+                "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.WebUtilities": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             }
           },
           "imports": [

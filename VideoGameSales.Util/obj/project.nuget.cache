@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "lVuPixE97GsV2KjsPFzf3iEkzCEv2ajLKaTvq2Joam/PBs7rFJnZ1wLZEotJyBDV2qgwDI1Cml3PBGsZEAj0tA==",
+  "dgSpecHash": "NY49gbOG7gz8/Jcvlz2aDOGQKikUb6Bt5pp1fS2t8wGAol0n5uC7084lRZUzPMV0lVcO4j1w/tUiTYr5hs1WUg==",
   "success": true,
   "projectFilePath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Util/VideoGameSales.Util.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/denis/.nuget/packages/fluentvalidation/10.3.3/fluentvalidation.10.3.3.nupkg.sha512",
+    "/home/denis/.nuget/packages/fluentvalidation.aspnetcore/10.3.3/fluentvalidation.aspnetcore.10.3.3.nupkg.sha512",
+    "/home/denis/.nuget/packages/fluentvalidation.dependencyinjectionextensions/10.3.3/fluentvalidation.dependencyinjectionextensions.10.3.3.nupkg.sha512",
+    "/home/denis/.nuget/packages/mediatr/9.0.0/mediatr.9.0.0.nupkg.sha512",
+    "/home/denis/.nuget/packages/microsoft.aspnetcore.webutilities/2.2.0/microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
+    "/home/denis/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/2.1.0/microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "/home/denis/.nuget/packages/microsoft.extensions.primitives/2.2.0/microsoft.extensions.primitives.2.2.0.nupkg.sha512",
+    "/home/denis/.nuget/packages/microsoft.net.http.headers/2.2.0/microsoft.net.http.headers.2.2.0.nupkg.sha512",
+    "/home/denis/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
+    "/home/denis/.nuget/packages/system.memory/4.5.1/system.memory.4.5.1.nupkg.sha512",
+    "/home/denis/.nuget/packages/system.runtime.compilerservices.unsafe/4.5.1/system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
+    "/home/denis/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

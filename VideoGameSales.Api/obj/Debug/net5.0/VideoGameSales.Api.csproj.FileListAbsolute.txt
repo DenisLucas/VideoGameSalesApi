@@ -70,3 +70,5 @@
 /home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Api/obj/Debug/net5.0/ref/VideoGameSales.Api.dll
 /home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Api/obj/Debug/net5.0/VideoGameSales.Api.pdb
 /home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Api/obj/Debug/net5.0/VideoGameSales.Api.genruntimeconfig.cache
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Api/bin/Debug/net5.0/VideoGameSales.Util.dll
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Api/bin/Debug/net5.0/VideoGameSales.Util.pdb
