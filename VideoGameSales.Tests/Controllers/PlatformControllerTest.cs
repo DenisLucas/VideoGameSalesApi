@@ -59,7 +59,7 @@ namespace VideoGameSales.Tests
             var platformController = new PlatformController(_mediator,_mapper,_urlHelper);
             
             var action = platformController.deletePlatformAsync(5);
-            var isOk = action as OkObjectResult;
+            var isOk = action.Result as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
 
