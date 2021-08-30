@@ -77,7 +77,5 @@ namespace VideoGameSales.Api.Controllers.Games
             }
             return BadRequest();
         }
-
-
     }
 }

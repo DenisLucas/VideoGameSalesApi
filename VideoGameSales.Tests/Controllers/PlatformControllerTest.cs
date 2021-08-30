@@ -3,6 +3,8 @@ using AutoMapper;
 using FakeItEasy;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using VideoGameSales.Api.Controllers;
+using VideoGameSales.Core.Platforms.Command;
 using VideoGameSales.Util.Helpers;
 using Xunit;
 
@@ -27,7 +29,7 @@ namespace VideoGameSales.Tests
             var gameController = new PlatformController(_mediator,_mapper,_urlHelper);
             var request = A.Dummy<CreatePlatformCommand>();
             var action = gameController.createPlatformAsync(request);
-            var isCreated = action as CreatedResult;
+            var isCreated = action.Result as CreatedResult;
 
             Assert.Equal(201, isCreated.StatusCode);
         }
@@ -38,7 +40,7 @@ namespace VideoGameSales.Tests
             var platformController = new PlatformController(_mediator,_mapper,_urlHelper);
             
             var action = platformController.getPlatformAsync(4);
-            var isOk = action as OkObjectResult;
+            var isOk = action.Result as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
         [Fact]
@@ -46,8 +48,8 @@ namespace VideoGameSales.Tests
         {
             var platformController = new PlatformController(_mediator,_mapper,_urlHelper);
             var request = A.Dummy<EditPlatformCommand>();
-            var action = platformController.editGameSalesAsync(request);
-            var isOk = action as OkObjectResult;
+            var action = platformController.editPlatformAsync(3,request);
+            var isOk = action.Result as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
         
