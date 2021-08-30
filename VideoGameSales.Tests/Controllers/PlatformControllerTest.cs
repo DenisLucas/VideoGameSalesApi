@@ -24,7 +24,7 @@ namespace VideoGameSales.Tests
         }
         
         [Fact]
-        private Task createPlatformShouldReturn201Created()
+        private void createPlatformShouldReturn201Created()
         {
             var gameController = new PlatformController(_mediator,_mapper,_urlHelper);
             var request = A.Dummy<CreatePlatformCommand>();
@@ -35,7 +35,7 @@ namespace VideoGameSales.Tests
         }
 
         [Fact]
-        private Task getPlatformShouldReturn200Ok()
+        private void getPlatformShouldReturn200Ok()
         {
             var platformController = new PlatformController(_mediator,_mapper,_urlHelper);
             
@@ -44,7 +44,7 @@ namespace VideoGameSales.Tests
             Assert.Equal(200, isOk.StatusCode);
         }
         [Fact]
-        private Task editPlatformShouldReturn200Ok()
+        private void editPlatformShouldReturn200Ok()
         {
             var platformController = new PlatformController(_mediator,_mapper,_urlHelper);
             var request = A.Dummy<EditPlatformCommand>();
@@ -54,7 +54,7 @@ namespace VideoGameSales.Tests
         }
         
         [Fact]
-        private Task deletePlatformShouldReturn200Ok()
+        private void deletePlatformShouldReturn200Ok()
         {
             var platformController = new PlatformController(_mediator,_mapper,_urlHelper);
             
