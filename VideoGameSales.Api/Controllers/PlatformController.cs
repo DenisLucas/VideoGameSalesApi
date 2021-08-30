@@ -13,9 +13,9 @@ using VideoGameSales.Util.Helpers;
 namespace VideoGameSales.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
     public class PlatformController : ControllerBase
     {
+        public const string _base = "api/platform";
         private readonly IMediator _mediator;
         private readonly UrlHelpers _urlHelper;
         private readonly IMapper _mapper;
@@ -26,7 +26,7 @@ namespace VideoGameSales.Api.Controllers
             _mapper = mapper;
             _urlHelper = urlHelpers;
         }
-        [HttpPost]
+        [HttpPost(_base)]
         public async Task<IActionResult> createPlatformAsync([FromBody] CreatePlatformCommand request)
         {
             var platform = await _mediator.Send(request);
@@ -38,7 +38,7 @@ namespace VideoGameSales.Api.Controllers
             }
             return BadRequest();
         }
-        [HttpGet("/{id}")]
+        [HttpGet(_base + "/{id}")]
         public async Task<IActionResult> getPlatformAsync(int id)
         {
             var query = new GetPlatformByIdQuery(id);
@@ -52,7 +52,7 @@ namespace VideoGameSales.Api.Controllers
             return BadRequest();
         }
 
-        [HttpPut("/{id}")]
+        [HttpPut(_base + "/{id}")]
         public async Task<IActionResult> editPlatformAsync(int id, [FromBody] EditPlatformCommand request)
         {
             var command = new EditPlatformWithIdCommand(id,request);
@@ -66,7 +66,7 @@ namespace VideoGameSales.Api.Controllers
             return BadRequest();
         }
 
-        [HttpDelete("/{id}")]
+        [HttpDelete(_base + "/{id}")]
         public async Task<IActionResult> deletePlatformAsync(int id)
         {
             var query = new DeletePlatformByIdCommand(id);

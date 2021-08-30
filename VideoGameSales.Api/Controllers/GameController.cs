@@ -12,9 +12,9 @@ using VideoGameSales.Util.Helpers;
 namespace VideoGameSales.Api.Controllers.Games
 {
     [ApiController]
-    [Route("api/[controller]")]
     public class GameController : ControllerBase
     {
+        private const string _base = "api/game";
         private readonly IMediator _mediator;
         private readonly UrlHelpers _urlHelper;
         private readonly IMapper _mapper;
@@ -25,7 +25,7 @@ namespace VideoGameSales.Api.Controllers.Games
             _mapper = mapper;
             _urlHelper = urlHelpers;
         }
-        [HttpPost]
+        [HttpPost(_base)]
         public async Task<IActionResult> createGameAsync([FromBody] CreateGameCommand request)
         {
             var game = await _mediator.Send(request);
@@ -37,7 +37,7 @@ namespace VideoGameSales.Api.Controllers.Games
             }
             return BadRequest();
         }
-        [HttpGet("/{id}")]
+        [HttpGet(_base + "/{id}")]
         public async Task<IActionResult> getGameAsync(int id)
         {
             var query = new GetGameByIdQuery(id);
@@ -51,7 +51,7 @@ namespace VideoGameSales.Api.Controllers.Games
             return BadRequest();
         }
 
-        [HttpPut("/{id}")]
+        [HttpPut(_base + "/{id}")]
         public async Task<IActionResult> editGameAsync(int id, [FromBody] EditGameCommand request)
         {
             var command = new EditGameWithIdCommand(id,request);
@@ -65,7 +65,7 @@ namespace VideoGameSales.Api.Controllers.Games
             return BadRequest();
         }
 
-        [HttpDelete("/{id}")]
+        [HttpDelete(_base + "/{id}")]
         public async Task<IActionResult> deleteGameAsync(int id)
         {
             var query = new DeleteGameByIdCommand(id);

@@ -4,6 +4,8 @@ using AutoMapper;
 using FakeItEasy;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using VideoGameSales.Api.Controllers;
+using VideoGameSales.Core.GameToPlatform.Command;
 using VideoGameSales.Util.Helpers;
 using Xunit;
 
@@ -23,42 +25,42 @@ namespace VideoGameSales.Tests.Controllers
         }
         
         [Fact]
-        private Task createGameToPublisherShouldReturn201Created()
+        private void createGameToPublisherShouldReturn201Created()
         {
-            var gameController = new GameToPublisherController(_mediator,_mapper,_urlHelper);
+            var gameController = new GamesToPublisherController(_mediator,_mapper,_urlHelper);
             var request = A.Dummy<CreateGameToPublisherCommand>();
             var action = gameController.createGameToPublisherAsync(request);
-            var isCreated = action as CreatedResult;
+            var isCreated = action.Result as CreatedResult;
 
             Assert.Equal(201, isCreated.StatusCode);
         }
 
         [Fact]
-        private Task getGameToPublisherShouldReturn200Ok()
+        private void getGameToPublisherShouldReturn200Ok()
         {
-            var gameController = new GameToPublisherController(_mediator,_mapper,_urlHelper);
+            var gameController = new GamesToPublisherController(_mediator,_mapper,_urlHelper);
             
             var action = gameController.getGameToPublisherAsync(3);
-            var isOk = action as OkObjectResult;
+            var isOk = action.Result as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
         [Fact]
-        private Task editGameToPublisherShouldReturn200Ok()
+        private void editGameToPublisherShouldReturn200Ok()
         {
-            var gameController = new GameToPublisherController(_mediator,_mapper,_urlHelper);
+            var gameController = new GamesToPublisherController(_mediator,_mapper,_urlHelper);
             var request = A.Dummy<EditGameToPublisherCommand>();
-            var action = gameController.editGameToPublisherAsync(request);
-            var isOk = action as OkObjectResult;
+            var action = gameController.editGameToPublisherAsync(4,request);
+            var isOk = action.Result as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
         
         [Fact]
-        private Task deleteGameToPublisherShouldReturn200Ok()
+        private void deleteGameToPublisherShouldReturn200Ok()
         {
-            var gameController = new GameToPublisherController(_mediator,_mapper,_urlHelper);
+            var gameController = new GamesToPublisherController(_mediator,_mapper,_urlHelper);
             
             var action = gameController.deleteGameToPublisherAsync(0);
-            var isOk = action as OkObjectResult;
+            var isOk = action.Result as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
     }

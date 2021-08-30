@@ -13,9 +13,9 @@ namespace VideoGameSales.Api.Controllers
 {
 
     [ApiController]
-    [Route("api/[controller]")]
     public class SalesController : ControllerBase
     {
+        private const string _base = "api/sale"; 
         private readonly IMediator _mediator;
         private readonly UrlHelpers _urlHelper;
         private readonly IMapper _mapper;
@@ -26,7 +26,7 @@ namespace VideoGameSales.Api.Controllers
             _mapper = mapper;
             _urlHelper = urlHelpers;
         }
-        [HttpPost]
+        [HttpPost(_base)]
         public async Task<IActionResult> createSalesAsync([FromBody] CreateSalesCommand request)
         {
             var sale = await _mediator.Send(request);
@@ -38,7 +38,7 @@ namespace VideoGameSales.Api.Controllers
             }
             return BadRequest();
         }
-        [HttpGet("/{gameId}/{platformId}")]
+        [HttpGet(_base + "/{gameId}/{platformId}")]
         public async Task<IActionResult> getSalesAsync(int gameId,int platformId)
         {
             var query = new GetSalesByIdQuery(gameId,platformId);
@@ -52,7 +52,7 @@ namespace VideoGameSales.Api.Controllers
             return BadRequest();
         }
 
-        [HttpPut("/{id}")]
+        [HttpPut(_base + "/{id}")]
         public async Task<IActionResult> editSalesAsync(int id, [FromBody] EditSalesCommand request)
         {
             var command = new EditSalesWithIdCommand(id,request);
@@ -66,7 +66,7 @@ namespace VideoGameSales.Api.Controllers
             return BadRequest();
         }
 
-        [HttpDelete("/{id}")]
+        [HttpDelete(_base + "/{id}")]
         public async Task<IActionResult> deleteSalesAsync(int id)
         {
             var query = new DeleteSalesByIdCommand(id);

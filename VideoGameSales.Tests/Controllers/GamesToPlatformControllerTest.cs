@@ -4,6 +4,8 @@ using AutoMapper;
 using FakeItEasy;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using VideoGameSales.Api.Controllers;
+using VideoGameSales.Core.GameToPlatform.Command;
 using VideoGameSales.Util.Helpers;
 using Xunit;
 
@@ -23,42 +25,42 @@ namespace VideoGameSales.Tests.Controllers
         }
         
         [Fact]
-        private Task createGameToPlatformShouldReturn201Created()
+        private void createGameToPlatformShouldReturn201Created()
         {
-            var gameController = new GameToPlatformController(_mediator,_mapper,_urlHelper);
-            var request = A.Dummy<CreateGameToPlataformCommand>();
+            var gameController = new GamesToPlatformController(_mediator,_mapper,_urlHelper);
+            var request = A.Dummy<CreateGameToPlatformCommand>();
             var action = gameController.createGameToPlatformAsync(request);
-            var isCreated = action as CreatedResult;
+            var isCreated = action.Result as CreatedResult;
 
             Assert.Equal(201, isCreated.StatusCode);
         }
 
         [Fact]
-        private Task getGameToPlatformShouldReturn200Ok()
+        private void getGameToPlatformShouldReturn200Ok()
         {
-            var gameController = new GameToPlatformController(_mediator,_mapper,_urlHelper);
+            var gameController = new GamesToPlatformController(_mediator,_mapper,_urlHelper);
             
             var action = gameController.getGameToPlatformAsync(2);
-            var isOk = action as OkObjectResult;
+            var isOk = action.Result as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
         [Fact]
-        private Task editGameToPlatformShouldReturn200Ok()
+        private void editGameToPlatformShouldReturn200Ok()
         {
-            var gameController = new GameToPlatformController(_mediator,_mapper,_urlHelper);
+            var gameController = new GamesToPlatformController(_mediator,_mapper,_urlHelper);
             var request = A.Dummy<EditGameToPlatformCommand>();
-            var action = gameController.editGameToPlatformAsync(request);
-            var isOk = action as OkObjectResult;
+            var action = gameController.editGameToPlatformAsync(4,request);
+            var isOk = action.Result as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
         
         [Fact]
-        private Task deleteGameToPlatformShouldReturn200Ok()
+        private void deleteGameToPlatformShouldReturn200Ok()
         {
-            var gameController = new GameToPlatformController(_mediator,_mapper,_urlHelper);
+            var gameController = new GamesToPlatformController(_mediator,_mapper,_urlHelper);
             
             var action = gameController.deleteGameToPlatformAsync(0);
-            var isOk = action as OkObjectResult;
+            var isOk = action.Result as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
     }

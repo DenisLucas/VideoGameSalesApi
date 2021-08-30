@@ -4,6 +4,8 @@ using AutoMapper;
 using FakeItEasy;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using VideoGameSales.Api.Controllers;
+using VideoGameSales.Core.Publishers.Command;
 using VideoGameSales.Util.Helpers;
 using Xunit;
 
@@ -22,42 +24,42 @@ namespace VideoGameSales.Tests.Controllers
             _mapper = A.Fake<IMapper>();
         }
         [Fact]
-        private Task createPublisherShouldReturn201Created()
+        private void createPublisherShouldReturn201Created()
         {
-            var publishersController = new PublishersController(_mediator,_mapper,_urlHelper);
+            var publishersController = new PublisherController(_mediator,_mapper,_urlHelper);
             var request = A.Dummy<CreatePublisherCommand>();
-            var action = publishersController.createPublishersAsync(request);
-            var isCreated = action as CreatedResult;
+            var action = publishersController.createPublisherAsync(request);
+            var isCreated = action.Result as CreatedResult;
 
             Assert.Equal(201, isCreated.StatusCode);
         }
 
         [Fact]
-        private Task getPublisherShouldReturn200Ok()
+        private void getPublisherShouldReturn200Ok()
         {
-            var publishersController = new PublishersController(_mediator,_mapper,_urlHelper);
+            var publishersController = new PublisherController(_mediator,_mapper,_urlHelper);
             
-            var action = publishersController.getPublishersAsync(6);
-            var isOk = action as OkObjectResult;
+            var action = publishersController.getPublisherAsync(6);
+            var isOk = action.Result as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
         
         [Fact]
-        private Task deletePublisherShouldReturn200Ok()
+        private void deletePublisherShouldReturn200Ok()
         {
-            var publishersController = new PublishersController(_mediator,_mapper,_urlHelper);
+            var publishersController = new PublisherController(_mediator,_mapper,_urlHelper);
             
-            var action = publishersController.deletePublishersAsync(0);
-            var isOk = action as OkObjectResult;
+            var action = publishersController.deletePublisherAsync(0);
+            var isOk = action.Result as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
         
-        private Task editPublisherShouldReturn200Ok()
+        private void editPublisherShouldReturn200Ok()
         {
-            var publishersController = new PublishersController(_mediator,_mapper,_urlHelper);
+            var publishersController = new PublisherController(_mediator,_mapper,_urlHelper);
             var request = A.Dummy<EditPublisherCommand>();
-            var action = publishersController.editPublishersAsync(request);
-            var isOk = action as OkObjectResult;
+            var action = publishersController.editPublisherAsync(3,request);
+            var isOk = action.Result as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
 
