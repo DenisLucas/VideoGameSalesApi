@@ -1,10 +1,8 @@
 using System;
-using MediatR;
-using VideoGameSales.Domain.Entities.Games;
 
-namespace VideoGameSales.Core.Games
+namespace VideoGameSales.Core.Games.Command
 {
-    public class CreateGameCommand : IRequest<Game>
+    public class EditGameCommand
     {
         public int Ranks { get; set; }        
         public string Name { get; set; }

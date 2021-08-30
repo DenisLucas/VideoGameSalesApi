@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using VideoGameSales.Api.Controllers.Games;
 using VideoGameSales.Core.Games;
+using VideoGameSales.Core.Games.Command;
 using VideoGameSales.Util.Helpers;
 using Xunit;
 
@@ -36,19 +37,19 @@ namespace VideoGameSales.Tests
         }
 
         [Fact]
-        private Task getGameShouldReturn200Ok()
+        private async Task getGameShouldReturn200Ok()
         {
             var gameController = new GameController(_mediator,_mapper,_urlHelper);
-            var action = gameController.getGameAsync(0);
+            var action = await gameController.getGameAsync(0);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
         [Fact]
-        private Task editGameShouldReturn200Ok()
+        private async Task editGameShouldReturn200Ok()
         {
             var gameController = new GameController(_mediator,_mapper,_urlHelper);
             var request = A.Dummy<EditGameCommand>();
-            var action = gameController.editGameAsync(request);
+            var action = await gameController.editGameAsync(3,request);
             var isOk = action as OkObjectResult;
             Assert.Equal(200, isOk.StatusCode);
         }
