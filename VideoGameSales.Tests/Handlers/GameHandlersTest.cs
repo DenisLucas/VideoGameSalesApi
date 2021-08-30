@@ -2,7 +2,9 @@ using System;
 using System.Threading.Tasks;
 using FakeItEasy;
 using MediatR;
+using VideoGameSales.Core.Games.Query;
 using VideoGameSales.Domain.Entities.Games;
+using VideoGameSales.Domain.ViewModels.Games;
 using Xunit;
 namespace VideoGameSales.Tests.Handlers
 {
@@ -54,7 +56,7 @@ namespace VideoGameSales.Tests.Handlers
             A.CallTo(() => handler(_game)).Returns(Task.FromResult(Data));
 
             var action = await _mediator.Send(_game);
-            Assert.Equal(new GameViewModel(), action);
+            Assert.Equal(new Game(), action);
 
         }
         
@@ -72,21 +74,22 @@ namespace VideoGameSales.Tests.Handlers
 
             var action = await _mediator.Send(_game);
             Assert.Equal(9, Data.Count);
-            Assert.Equal(new GameViewModel(),handler);
+            Assert.Equal(new Game(),handler);
 
         }
         
         [Fact]
         private async Task getGameShouldReturnGameViewModel()
         {
-            var Data = A.CollectionOfDummy<Game>(10);
+
             
+            var Data = A.CollectionOfDummy<Game>(10);
+            var _game = new GetGameByIdQuery(2);
             var handler = A.Fake<GetGameCommandHandler>();    
             A.CallTo(() => handler(_game)).Returns(Task.FromResult(Data));
 
             var action = await _mediator.Send(_game);
-            Assert.Equal(9, Data.Count);
-            Assert.Equal(new GameViewModel(),handler);
+            Assert.Equal(new Game(),handler);
 
         }
     }
