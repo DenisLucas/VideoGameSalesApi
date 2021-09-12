@@ -4,7 +4,7 @@ using VideoGameSales.Domain.Entities.Conectors;
 
 namespace VideoGameSales.Core.GameToPlatform.Command
 {
-    public class EditGameToPlatformWithIdCommand : IRequest<GamesToPlatform>
+    public class EditGameToPlatformWithIdCommand : IRequest<GamesToPlataform>
     {
         public int Id { get; set; }
         public EditGameToPlatformCommand GameToPlatform { get; set; }

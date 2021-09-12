@@ -1,10 +1,10 @@
 using System;
 using MediatR;
-using VideoGameSales.Domain.Entities.Games;
+using VideoGameSales.Domain.ViewModels.Games;
 
 namespace VideoGameSales.Core.Games.Query
 {
-    public class GetGameByIdQuery : IRequest<Game>
+    public class GetGameByIdQuery : IRequest<GameViewModel>
     {
         public int Id { get; set; }
 

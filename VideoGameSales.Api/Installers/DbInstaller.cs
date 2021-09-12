@@ -1,5 +1,6 @@
 
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,10 +13,16 @@ namespace VideoGameSales.Api.Installers
     {
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<VideoGameSalesDbContext>(
-                options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString"),
-                b => b.MigrationsAssembly("VideoGameSales.Infrastructure"))
+             services.AddDbContext<VideoGameSalesDbContext>(
+                 options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnectionString"),
+                 b => b.MigrationsAssembly("VideoGameSales.Infrastructure"))
             );
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<VideoGameSalesDbContext>()
+                .AddDefaultTokenProviders();
+
+
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<UrlHelpers>(provider =>
             {
@@ -25,6 +32,7 @@ namespace VideoGameSales.Api.Installers
                 return new UrlHelpers(absolutUri);
             }
             );
+            
             
         }
     }

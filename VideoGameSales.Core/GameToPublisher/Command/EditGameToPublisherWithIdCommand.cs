@@ -4,7 +4,7 @@ using VideoGameSales.Domain.Entities.Conectors;
 
 namespace VideoGameSales.Core.GameToPlatform.Command
 {
-    public class EditGameToPublisherWithIdCommand : IRequest<GamesToPublisher>
+    public class EditGameToPublisherWithIdCommand : IRequest<PublishersToGames>
     {
         public int Id { get; set; }
         public EditGameToPublisherCommand GameToPublisher { get; set; }

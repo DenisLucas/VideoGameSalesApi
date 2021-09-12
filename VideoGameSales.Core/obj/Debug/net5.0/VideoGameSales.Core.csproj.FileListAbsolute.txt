@@ -13,3 +13,5 @@
 /home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/obj/Debug/net5.0/VideoGameSales.Core.dll
 /home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/obj/Debug/net5.0/ref/VideoGameSales.Core.dll
 /home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/obj/Debug/net5.0/VideoGameSales.Core.pdb
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/bin/Debug/net5.0/VideoGameSales.Infrastructure.dll
+/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/bin/Debug/net5.0/VideoGameSales.Infrastructure.pdb

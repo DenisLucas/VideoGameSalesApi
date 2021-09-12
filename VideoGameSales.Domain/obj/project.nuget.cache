@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "fNU0+LQD2VnUo1U+wIAT5WWx2QwEBQFcGJz4EQF5tuPW8SnACXYCcxnVUPt2rToK4eQ/1D+0zOjT0+D8GFeTOA==",
+  "dgSpecHash": "i9jtg8rDms+A8I5hrzOFb5wR9LbU9pukWEfm4dTdQUnzrjDcGbxRxa1nHMygLci2LplMAhzKxJaPKu3mctSt/w==",
   "success": true,
   "projectFilePath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/VideoGameSales.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/denis/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/home/denis/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/home/denis/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
