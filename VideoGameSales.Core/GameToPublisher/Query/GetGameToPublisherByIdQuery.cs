@@ -1,10 +1,10 @@
 using System;
 using MediatR;
-using VideoGameSales.Domain.Entities.Conectors;
+using VideoGameSales.Domain.ViewModels.Connectors;
 
-namespace VideoGameSales.Core.GameToPlatform.Query
+namespace VideoGameSales.Core.GameToPublisher.Query
 {
-    public class GetGameToPublisherByIdQuery : IRequest<PublishersToGames>
+    public class GetGameToPublisherByIdQuery : IRequest<GameToPublisherViewModel>
     {
 
         public int Id { get; set; }

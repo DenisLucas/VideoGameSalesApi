@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using VideoGameSales.Core.GameToPlatform.Command;
-using VideoGameSales.Core.GameToPlatform.Query;
+using VideoGameSales.Core.GameToPublisher.Command;
+using VideoGameSales.Core.GameToPublisher.Query;
 using VideoGameSales.Core.Pagination;
 using VideoGameSales.Domain.ViewModels.Connectors;
 using VideoGameSales.Util.Helpers;
@@ -44,7 +44,6 @@ namespace VideoGameSales.Api.Controllers
             var game = await _mediator.Send(query);
             if (game != null)
             { 
-                var uri = _urlHelper.GetUri(game.Id.ToString());
                 var response = _mapper.Map<GameToPublisherViewModel>(game);
                 return Ok(new Response<GameToPublisherViewModel>(response));
             }
@@ -70,10 +69,9 @@ namespace VideoGameSales.Api.Controllers
         {
             var query = new DeleteGameToPublisherByIdCommand(id);
             var game = await _mediator.Send(query);
-            if (game != null)
+            if (game)
             { 
-                var response = _mapper.Map<GameToPublisherViewModel>(game);
-                return Ok(new Response<GameToPublisherViewModel>(response));
+                return Ok();
             }
             return BadRequest();
         }

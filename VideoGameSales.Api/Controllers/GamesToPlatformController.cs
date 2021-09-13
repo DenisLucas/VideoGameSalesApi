@@ -44,7 +44,6 @@ namespace VideoGameSales.Api.Controllers
             var game = await _mediator.Send(query);
             if (game != null)
             { 
-                var uri = _urlHelper.GetUri(game.Id.ToString());
                 var response = _mapper.Map<GameToPlatformViewModel>(game);
                 return Ok(new Response<GameToPlatformViewModel>(response));
             }
@@ -70,10 +69,9 @@ namespace VideoGameSales.Api.Controllers
         {
             var query = new DeleteGameToPlatformByIdCommand(id);
             var game = await _mediator.Send(query);
-            if (game != null)
+            if (game)
             { 
-                var response = _mapper.Map<GameToPlatformViewModel>(game);
-                return Ok(new Response<GameToPlatformViewModel>(response));
+                return Ok();
             }
             return BadRequest();
         }

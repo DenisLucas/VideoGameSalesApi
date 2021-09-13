@@ -97,3 +97,11 @@
 /home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/obj/Debug/net5.0/ref/VideoGameSales.Tests.dll
 /home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/obj/Debug/net5.0/VideoGameSales.Tests.pdb
 /home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/obj/Debug/net5.0/VideoGameSales.Tests.genruntimeconfig.cache
+/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Tests/obj/Debug/net5.0/VideoGameSales.Tests.csproj.AssemblyReference.cache
+/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Tests/obj/Debug/net5.0/VideoGameSales.Tests.GeneratedMSBuildEditorConfig.editorconfig
+/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Tests/obj/Debug/net5.0/VideoGameSales.Tests.AssemblyInfoInputs.cache
+/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Tests/obj/Debug/net5.0/VideoGameSales.Tests.AssemblyInfo.cs
+/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Tests/obj/Debug/net5.0/VideoGameSales.Tests.csproj.CoreCompileInputs.cache
+/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Tests/obj/Debug/net5.0/VideoGameSales.Tests.dll
+/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Tests/obj/Debug/net5.0/ref/VideoGameSales.Tests.dll
+/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Tests/obj/Debug/net5.0/VideoGameSales.Tests.pdb

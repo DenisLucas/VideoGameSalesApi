@@ -1,6 +1,6 @@
 using System;
 
-namespace VideoGameSales.Core.GameToPlatform.Command
+namespace VideoGameSales.Core.GameToPublisher.Command
 {
     public class EditGameToPublisherCommand
     {

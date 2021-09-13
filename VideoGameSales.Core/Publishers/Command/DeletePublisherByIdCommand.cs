@@ -4,7 +4,7 @@ using VideoGameSales.Domain.Entities.Publishers;
 
 namespace VideoGameSales.Core.Publishers.Command
 {
-    public class DeletePublisherByIdCommand : IRequest<Publisher>
+    public class DeletePublisherByIdCommand : IRequest<bool>
     {
 
         public int Id { get; set; }

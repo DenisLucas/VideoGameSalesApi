@@ -9477,19 +9477,19 @@
     ]
   },
   "packageFolders": {
-    "/home/denis/.nuget/packages/": {}
+    "/home/doug/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/VideoGameSales.Tests.csproj",
+      "projectUniqueName": "/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Tests/VideoGameSales.Tests.csproj",
       "projectName": "VideoGameSales.Tests",
-      "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/VideoGameSales.Tests.csproj",
-      "packagesPath": "/home/denis/.nuget/packages/",
-      "outputPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Tests/obj/",
+      "projectPath": "/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Tests/VideoGameSales.Tests.csproj",
+      "packagesPath": "/home/doug/.nuget/packages/",
+      "outputPath": "/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/denis/.nuget/NuGet/NuGet.Config"
+        "/home/doug/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -9501,14 +9501,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Api/VideoGameSales.Api.csproj": {
-              "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Api/VideoGameSales.Api.csproj"
+            "/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Api/VideoGameSales.Api.csproj": {
+              "projectPath": "/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Api/VideoGameSales.Api.csproj"
             },
-            "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj": {
-              "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj"
+            "/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj": {
+              "projectPath": "/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Core/VideoGameSales.Core.csproj"
             },
-            "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Util/VideoGameSales.Util.csproj": {
-              "projectPath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Util/VideoGameSales.Util.csproj"
+            "/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Util/VideoGameSales.Util.csproj": {
+              "projectPath": "/home/doug/Área de Trabalho/Denis/VideoGameSalesApi/VideoGameSales.Util/VideoGameSales.Util.csproj"
             }
           }
         }
@@ -9571,7 +9571,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
       }
     }
   }

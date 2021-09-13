@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using FakeItEasy;
 using MediatR;
+using VideoGameSales.Core.Sales.Command;
 using VideoGameSales.Domain.Entities.Sales;
 using Xunit;
 
@@ -18,7 +19,7 @@ namespace VideoGameSales.Tests.Handlers
         [Fact]
         private async Task createSaleShouldReturnGameViewModel()
         {
-            var _sale = new CreateSaleCommand
+            var _sale = new CreateSalesCommand
             {
                 GamesToPlatforms_id = 0,
                 Sales_Na = 1,
@@ -29,8 +30,8 @@ namespace VideoGameSales.Tests.Handlers
             };
             var Data = A.CollectionOfDummy<Sale>(10);
             
-            var handler = A.Fake<CreateSaleCommandHandler>();    
-            A.CallTo(() => handler(_sale)).Returns(Task.FromResult(Data));
+            var handler = A.Fake<CreateSalesCommandHandler>();    
+            A.CallTo(() => handler.Handle(_sale)).Returns(Task.FromResult(Data));
 
             var action = await _mediator.Send(_sale);
             Assert.Equal(11,Data.Count);

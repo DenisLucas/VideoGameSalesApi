@@ -71,10 +71,9 @@ namespace VideoGameSales.Api.Controllers
         {
             var query = new DeleteSalesByIdCommand(id);
             var game = await _mediator.Send(query);
-            if (game != null)
+            if (game)
             { 
-                var response = _mapper.Map<SaleViewModel>(game);
-                return Ok(new Response<SaleViewModel>(response));
+                return Ok();
             }
             return BadRequest();
         }

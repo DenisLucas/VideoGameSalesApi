@@ -4,7 +4,7 @@ using VideoGameSales.Domain.Entities.Conectors;
 
 namespace VideoGameSales.Core.GameToPlatform.Command
 {
-    public class DeleteGameToPlatformByIdCommand : IRequest<GamesToPlataform>
+    public class DeleteGameToPlatformByIdCommand : IRequest<bool>
     {
 
         public int Id { get; set; }

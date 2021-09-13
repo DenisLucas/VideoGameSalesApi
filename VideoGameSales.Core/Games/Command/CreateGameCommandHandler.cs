@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using MediatR;
 using VideoGameSales.Domain.Entities.Games;
 using VideoGameSales.Infrastructure;
-
+using VideoGameSales.Domain.Entities.Conectors;
 namespace VideoGameSales.Core.Games.Command
 {
     public class CreateGameCommandHandler : IRequestHandler<CreateGameCommand, Game>
@@ -25,6 +25,28 @@ namespace VideoGameSales.Core.Games.Command
                 };
             var gameDb = await _context.Games.AddAsync(game);
             await _context.SaveChangesAsync();
+            
+            foreach (var id in request.Platform_Id)
+            {
+                var gamesToPlataform = new GamesToPlataform
+                {
+                    Games_id = game.Id,
+                    Platform_id = id
+                
+                };
+                await _context.GamesToPlataform.AddAsync(gamesToPlataform);
+        
+            }
+
+            var publisherToGames = new PublishersToGames
+                {
+                    Games_id = game.Id,
+                    Publishers_id = request.Publisher_id
+                };
+            await _context.PublishersToGames.AddAsync(publisherToGames);
+        
+            await _context.SaveChangesAsync();
+            
             return game;
         }
     }

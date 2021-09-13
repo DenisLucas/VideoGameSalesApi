@@ -71,8 +71,7 @@ namespace VideoGameSales.Api.Controllers.Games
             var game = await _mediator.Send(query);
             if (game)
             { 
-                var response = _mapper.Map<GameViewModel>(game);
-                return Ok(new Response<GameViewModel>(response));
+                return Ok();
             }
             return BadRequest();
         }

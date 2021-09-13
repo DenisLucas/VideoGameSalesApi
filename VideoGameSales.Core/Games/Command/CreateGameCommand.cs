@@ -1,5 +1,6 @@
 using System;
 using MediatR;
+using System.Collections.Generic;
 using VideoGameSales.Domain.Entities.Games;
 
 namespace VideoGameSales.Core.Games.Command
@@ -10,5 +11,7 @@ namespace VideoGameSales.Core.Games.Command
         public string Name { get; set; }
         public string Genre { get; set; }
         public int Release_year { get; set; }
+        public List<int> Platform_Id { get; set; }
+        public int Publisher_id { get; set; }
     }
 }

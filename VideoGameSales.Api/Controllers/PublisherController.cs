@@ -45,7 +45,6 @@ namespace VideoGameSales.Api.Controllers
             var publisher = await _mediator.Send(query);
             if (publisher != null)
             { 
-                var uri = _urlHelper.GetUri(publisher.Id.ToString());
                 var response = _mapper.Map<PublisherViewModel>(publisher);
                 return Ok(new Response<PublisherViewModel>(response));
             }
@@ -70,11 +69,10 @@ namespace VideoGameSales.Api.Controllers
         public async Task<IActionResult> deletePublisherAsync(int id)
         {
             var query = new DeletePublisherByIdCommand(id);
-            var game = await _mediator.Send(query);
-            if (game != null)
+            var publisher = await _mediator.Send(query);
+            if (publisher)
             { 
-                var response = _mapper.Map<PublisherViewModel>(game);
-                return Ok(new Response<PublisherViewModel>(response));
+                return Ok();
             }
             return BadRequest();
         }
