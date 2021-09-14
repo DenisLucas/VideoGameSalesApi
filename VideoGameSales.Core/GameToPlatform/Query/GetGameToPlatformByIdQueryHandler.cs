@@ -30,7 +30,13 @@ namespace VideoGameSales.Core
             };
             game.GameName = await _context.Games.Where(x => x.Id == gameToPlatform.Games_id).Select(n => n.Name).FirstOrDefaultAsync();
             game.PlatformName = await _context.Platform.Where(x => x.Id == gameToPlatform.Platform_id).Select(n => n.Name).FirstOrDefaultAsync();
-            return game;
+            return new GameToPlatformViewModel
+                {
+                    GameId = gameToPlatform.Games_id,
+                    PlatformId = gameToPlatform.Platform_id,
+                    GameName = _context.Games.Where(x => x.Id == gameToPlatform.Games_id).Select(x=>  x.Name).FirstOrDefault(),
+                    PlatformName = _context.Platform.Where(x => x.Id == gameToPlatform.Platform_id).Select(x=>  x.Name).FirstOrDefault()
+                };
         }
     }
 }

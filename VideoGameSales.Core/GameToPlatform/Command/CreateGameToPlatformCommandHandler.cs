@@ -1,9 +1,11 @@
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using VideoGameSales.Core.GameToPlatform.Command;
 using VideoGameSales.Domain.Entities.Conectors;
+using VideoGameSales.Domain.ViewModels.Connectors;
 using VideoGameSales.Infrastructure;
 
 namespace VideoGameSales.Core

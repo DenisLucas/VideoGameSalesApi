@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using VideoGameSales.Api.Controllers;
 using VideoGameSales.Core.GameToPlatform.Command;
+using VideoGameSales.Core.GameToPublisher.Command;
 using VideoGameSales.Util.Helpers;
 using Xunit;
 

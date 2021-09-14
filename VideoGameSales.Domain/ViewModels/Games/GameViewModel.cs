@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using VideoGameSales.Domain.Entities.Conectors;
-using VideoGameSales.Domain.ViewModels.Connectors;
 
 namespace VideoGameSales.Domain.ViewModels.Games
 {

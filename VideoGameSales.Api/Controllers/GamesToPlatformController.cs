@@ -57,7 +57,6 @@ namespace VideoGameSales.Api.Controllers
             var game = await _mediator.Send(command);
             if (game != null)
             { 
-                var uri = _urlHelper.GetUri(game.Id.ToString());
                 var response = _mapper.Map<GameToPlatformViewModel>(game);
                 return Ok(new Response<GameToPlatformViewModel>(response));
             }

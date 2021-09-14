@@ -13,7 +13,6 @@ namespace VideoGameSales.Api.Installers
         {
             addMediatR(services);
             fluentValidation(services);
-            addAutoMaper(services);
         }
 
         private void addMediatR(IServiceCollection services)
@@ -25,11 +24,6 @@ namespace VideoGameSales.Api.Installers
             services.AddMvc(options =>
                 options.Filters.Add<ValidationFilter>());
             services.AddFluentValidation(mvcConfiguration=> mvcConfiguration.RegisterValidatorsFromAssembly(AppDomain.CurrentDomain.Load("VideoGameSales.Core")));
-        }
-        private void addAutoMaper(IServiceCollection services)
-        {
-            services.AddAutoMapper(AppDomain.CurrentDomain.Load("VideoGameSales.Domain"));
-
         }
     }
 }

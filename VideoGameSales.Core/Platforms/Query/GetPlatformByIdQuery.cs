@@ -1,6 +1,7 @@
 using System;
 using MediatR;
 using VideoGameSales.Domain.Entities.Platforms;
+using VideoGameSales.Domain.ViewModels.Platforms;
 
 namespace VideoGameSales.Core.Platforms.Query
 {
