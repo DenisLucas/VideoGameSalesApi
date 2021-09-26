@@ -25,8 +25,7 @@ namespace VideoGameSales.Api.Controllers
         public async Task<IActionResult> Register([FromBody] UserRegistrationCommand request)
         {
             var identity = new UserRegistrationCommandHandler(_userManager);
-            var token = new CancellationToken();
-            var result = await identity.Handle(request,token);
+            var result = await identity.Handle(request);
             if (!result.Succes)
             {
                 return Ok(new AuthentificationFailViewModel
@@ -43,8 +42,7 @@ namespace VideoGameSales.Api.Controllers
         public async Task<IActionResult> Login([FromBody] UserLoginCommand request)
         {
             var identity = new UserLoginCommandHandler(_userManager);
-            var token = new CancellationToken();
-            var result = await identity.Handle(request,token);
+            var result = await identity.Handle(request);
             if (!result.Succes)
             {
                 return Ok(new AuthentificationFailViewModel

@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using VideoGameSales.Core.Pagination;
 using VideoGameSales.Core.Publishers.Command;
 using VideoGameSales.Core.Publishers.Query;
+using VideoGameSales.Domain.Entities.Publishers;
 using VideoGameSales.Domain.Errors;
-using VideoGameSales.Domain.ViewModels.Publishers;
 using VideoGameSales.Util.Helpers;
 
 namespace VideoGameSales.Api.Controllers
@@ -39,8 +39,7 @@ namespace VideoGameSales.Api.Controllers
             if (publisher.Data != null)
             { 
                 var uri = _urlHelper.GetUri(publisher.Data.Id.ToString());
-                var response = _mapper.Map<PublisherViewModel>(publisher);
-                return Created(uri, new Response<PublisherViewModel>(response));
+                return Created(uri, new Response<Publisher>(publisher.Data));
             }
             return BadRequest(new ErrorModel{FieldName = "Id", ErrorMessage = "Invalid Id"});
         }
@@ -55,8 +54,7 @@ namespace VideoGameSales.Api.Controllers
             }
             if (publisher.Data != null)
             { 
-                var response = _mapper.Map<PublisherViewModel>(publisher);
-                return Ok(new Response<PublisherViewModel>(response));
+                return Ok(new Response<Publisher>(publisher.Data));
             }
             return BadRequest(new ErrorModel{FieldName = "Id", ErrorMessage = "Invalid Id"});
         }
@@ -74,8 +72,7 @@ namespace VideoGameSales.Api.Controllers
             if (publisher.Data != null)
             { 
                 var uri = _urlHelper.GetUri(publisher.Data.Id.ToString());
-                var response = _mapper.Map<PublisherViewModel>(publisher);
-                return Ok(new Response<PublisherViewModel>(response));
+                return Ok(new Response<Publisher>(publisher.Data));
             }
             return BadRequest(new ErrorModel{FieldName = "Id", ErrorMessage = "Invalid Id"});
         }

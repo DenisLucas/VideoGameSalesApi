@@ -10,7 +10,7 @@ using VideoGameSales.Infrastructure;
 namespace VideoGameSales.Infrastructure.Migrations
 {
     [DbContext(typeof(VideoGameSalesDbContext))]
-    [Migration("20210926185729_Identity")]
+    [Migration("20210926202913_Identity")]
     partial class Identity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

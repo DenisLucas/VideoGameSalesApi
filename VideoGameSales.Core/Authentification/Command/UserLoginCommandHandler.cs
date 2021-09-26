@@ -20,7 +20,7 @@ namespace VideoGameSales.Core.Authentification.Command
         {
             _userManager = userManager;
         }
-        public async Task<AuthentificationResult> Handle(UserLoginCommand request, CancellationToken cancellationToken)
+        public async Task<AuthentificationResult> Handle(UserLoginCommand request)
         {
             var user = await _userManager.FindByNameAsync(request.Usermame);
             if (user == null)
@@ -41,12 +41,12 @@ namespace VideoGameSales.Core.Authentification.Command
                 };
             }
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_jwtSettings.Secret);
+            var key = Encoding.ASCII.GetBytes("ILoveWebApiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiis");
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims: new []
                 {
-                    new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
+                    new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                     
                     new Claim("Id", user.Id)
