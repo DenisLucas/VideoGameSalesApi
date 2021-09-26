@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "vI5bsUHYIBVt0O9w4GCHa+2u1+WRiYyQkk9v9xyWGSPu/hdioW73bFdfjjGg7ReGx2SrMyWhAO4fmzYXQ7QfCQ==",
+  "success": true,
+  "projectFilePath": "/home/denis/Downloads/VideoGameSalesApi/VideoGameSales.Domain/VideoGameSales.Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/denis/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/home/denis/.nuget/packages/fluentvalidation/10.3.3/fluentvalidation.10.3.3.nupkg.sha512",
+    "/home/denis/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
+    "/home/denis/.nuget/packages/microsoft.entityframeworkcore.analyzers/5.0.10/microsoft.entityframeworkcore.analyzers.5.0.10.nupkg.sha512",
+    "/home/denis/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
