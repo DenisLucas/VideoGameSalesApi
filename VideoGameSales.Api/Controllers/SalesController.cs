@@ -36,12 +36,13 @@ namespace VideoGameSales.Api.Controllers
         public async Task<IActionResult> createSalesAsync([FromBody] CreateSalesCommand request)
         {
             var sale = await _mediator.Send(request);
-            if (!sale.Valid.IsValid)
-            {
-                return BadRequest(erroResponse(sale.Valid));
-            }            
             if (sale.Data != null)
             { 
+            
+                if (!sale.Valid.IsValid)
+                {
+                    return BadRequest(erroResponse(sale.Valid));
+                }            
                 var uri = _urlHelper.GetUri(sale.Data.Id.ToString());
                 var response = _mapper.Map<SaleViewModel>(sale.Data);
                 return Created(uri, new Response<SaleViewModel>(response));
@@ -53,17 +54,18 @@ namespace VideoGameSales.Api.Controllers
         {
             var query = new GetSalesByIdQuery(id);
             var sale = await _mediator.Send(query);
-            if (!sale.Valid.IsValid)
-            {
-                return BadRequest(erroResponse(sale.Valid));
-            }            
             if (sale.Data != null)
             { 
+                
+                if (!sale.Valid.IsValid)
+                {
+                    return BadRequest(erroResponse(sale.Valid));
+                }            
                 var uri = _urlHelper.GetUri(sale.Data.Id.ToString());
                 var response = _mapper.Map<SaleViewModel>(sale.Data);
                 return Ok(new Response<SaleViewModel>(response));
             }
-            return BadRequest(new ErrorModel{FieldName = "Id", ErrorMessage = "Invalid Id"});
+            return BadRequest("Invalid Id");
         }
 
         [HttpPut(_base + "/{id}")]
@@ -71,12 +73,13 @@ namespace VideoGameSales.Api.Controllers
         {
             var command = new EditSalesWithIdCommand(id,request);
             var sale = await _mediator.Send(command);
-            if (!sale.Valid.IsValid)
-            {
-                return BadRequest(erroResponse(sale.Valid));
-            }            
-            if (sale.Data != null)
+             if (sale.Data != null)
             { 
+                if (!sale.Valid.IsValid)
+                {
+                    return BadRequest(erroResponse(sale.Valid));
+                }            
+           
                 var uri = _urlHelper.GetUri(sale.Data.Id.ToString());
                 var response = _mapper.Map<SaleViewModel>(sale.Data);
                 return Ok(new Response<SaleViewModel>(response));
